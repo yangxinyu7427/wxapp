@@ -1,6 +1,7 @@
 // pages/sports/sports.js
 const app = getApp()
 const db = wx.cloud.database()
+var util = require('../../utils/util.js');
 let countid=""
 let step=""
 let day=""
@@ -22,6 +23,7 @@ Page({
     name:'',
     number:'',
     stdnumber:'',
+    showdate:'',
     navH: 0,
     day: '查看我的步数吧',
     count: '',
@@ -231,6 +233,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var time = util.formatTime(new Date());
+    // 再通过setData更改Page()里面的data，动态更新页面的数据
+    this.setData({
+      showdate: time.slice(0,10).replace(/\//g,"-")
+    });
     wx.cloud.callFunction({
       name: 'login',
       data: {},
@@ -298,7 +305,28 @@ Page({
               var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
               day=Y + '-'  + M+ '-' + D
               console.log("当前时间：" + day )
-              this.setData({date:day}) 
+              this.setData({
+                date:day
+              }) 
+              console.log(this.data.number,this.data.showdate)
+              db.collection('step').orderBy('step','desc').where({
+                number:this.data.number,
+                day:this.data.showdate
+              }).get({
+                success: (res)=> {
+                  this.setData({
+                    runResult: res.data
+                  })
+                  console.log('[数据库] [查询全班记录] 成功: ', res)
+                },
+                fail: err => {
+                  wx.showToast({
+                    icon: 'none',
+                    title: '查询记录失败'  
+                  })
+                  console.error('[数据库] [查询记录] 失败：', err)
+                }
+              })
                })
            },
         })
@@ -307,6 +335,7 @@ Page({
         console.error('[云函数] [login] 调用失败', err)
       }
     })
+
     this.setData({
       navH: app.globalData.navHeight,
     });
@@ -384,12 +413,12 @@ Page({
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      date: e.detail.value
+      showdate: e.detail.value
     })
     console.log(this.data.number,this.data.date)
     db.collection('step').orderBy('step','desc').where({
       number:this.data.number,
-      day:this.data.date
+      day:this.data.showdate
     }).get({
       success: (res)=> {
         this.setData({
