@@ -269,7 +269,7 @@ Page({
           },
           fail: err => {
             wx.showToast({
-              icon: 'none',
+              icon: 'none' ,
               title: '查询记录失败'  
             })
     
