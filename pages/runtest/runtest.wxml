@@ -1,0 +1,23 @@
+<!--miniprogram/pages/runtest/runtest.wxml-->
+<text class="request-text">姓名:{{name}}</text>
+<text class="request-text">班号:{{number}}</text>
+<text class="request-text">学号:{{stdnumber}}</text>
+<view class="list-item" wx:if="{{step}}">
+      <text class="request-text">今日步数：{{step}}   </text>
+      <text class="request-text">达标情况：{{status}}</text>
+</view>
+
+<button bindtap="updateRun">提交步数</button>
+<view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="{{date}}" start="2021-01-01" end="2023-12-01" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view>
+<view class="code" wx:for="{{runResult}}">
+      <view>{{item.name}}</view>
+      <view>{{item.step}}</view>
+      <view>{{item.status}}</view>
+    </view>

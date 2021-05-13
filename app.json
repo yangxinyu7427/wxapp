@@ -1,0 +1,68 @@
+{
+
+  "pages": [
+    "pages/sports/sports", 
+    "pages/runtest/runtest",
+    "pages/bin/bin",
+    
+    "pages/comm/comm",
+    "pages/games/games",
+    "pages/gamePage/gamePage",
+    
+    "pages/days/days",
+    "pages/home/home",
+    "pages/fir/fir",
+    "pages/login/login",
+    "pages/login2/login2",
+    "pages/send/send",
+    "pages/serach/search",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "black",
+    "borderStyle": "white",
+    "backgroundColor": "#DCDCDC",
+    "selectedColor": "#6799FF",
+    "list": [
+      {
+        "pagePath": "pages/games/games",
+        "text": "赛务",
+        "iconPath": "./icon/bs.png",
+        "selectedIconPath": "./icon/bs2.png"
+      },
+      {
+        "pagePath": "pages/sports/sports",
+        "text": "运动",
+        "iconPath": "./icon/yd.png",
+        "selectedIconPath": "./icon/yd2.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我",
+        "iconPath": "./icon/me.png",
+        "selectedIconPath": "./icon/me2.png"
+      },
+      {
+        "pagePath": "pages/comm/comm",
+        "text": "社区",
+        "iconPath": "./icon/mk.png",
+        "selectedIconPath": "./icon/mk2.png"
+      },
+      {
+        "pagePath": "pages/send/send",
+        "text": "记录",
+        "iconPath": "./icon/tx.png",
+        "selectedIconPath": "./icon/tx2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

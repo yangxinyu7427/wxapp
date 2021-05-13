@@ -1,0 +1,50 @@
+<!-- pages/index/index.wxml -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">CampusCloud</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" url="/pages/serach/search">
+            <view class="nav-capsule">
+                <view>
+                    <image class="back-pre" src="../../images/my/ss.png" style="height:35px;width:35px;"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view style="margin-top:{{navH*4+50}}rpx">
+    <view class="mess_sort">
+        <!-- 实时留言 -->
+        <view class="leave-message">
+            <image class="message-image" src="../../images/message.png"></image>
+            <swiper class="swiper_message" circular vertical autoplay interval="5000" easing-function="easeInOutCubic">
+                <swiper-item class="swiper-item-message">
+                    <view class="message">
+                        <text class="message-name">学习</text>
+                        <text class="message-content">欢迎大家来学习</text>
+                    </view>
+                </swiper-item>
+                <swiper-item class="swiper-item-message">
+                    <view class="message">
+                        <!-- <image class="message-image" src="../../assets/images/sort/love-mood.png"></image> -->
+                        <text class="message-name">寻找</text>
+                        <text class="message-content">有丢东西的吗</text>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <!-- 分类标签 -->
+        <scroll-view scroll-x class="sort-nav" scroll-with-animation enable-flex="true">
+            <view class="sort-nav-item" wx:for="{{sortList}}" wx:key="index">
+                <image class="sort-nav-icon" src="{{item.icon}}" mode="widthFix" lazy-load="false"></image>
+                <text class="sort-nav-text">{{item.text}}</text>
+                <image class="down-selected" src="../../images/dwon.png"></image>
+            </view>
+        </scroll-view>
+    </view>
+    <van-skeleton title avatar row="3" loading="{{ loading }}">
+        <view><image class="" src="../../images/null.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          </view>
+    </van-skeleton>
+</view>
+<!-- <tabbar data="{{tabbar}}"></tabbar> -->

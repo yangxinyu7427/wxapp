@@ -1,0 +1,57 @@
+<!-- pages/sports/sports.wxml -->
+<!-- <tabbar data="{{tabbar}}" bindchange="tabChange"></tabbar> -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">CampusCloud</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;"></view>
+</view>
+<view class="spBox" style="margin-top: {{navH*2+20}}px;">
+    <view class="titleBox">
+        <text class="" selectable="false" space="false" decode="false">今日步数</text>
+    </view>
+    <view><text class="request-text">今日步数：{{step}} (这个要大)  </text></view>
+    <text class="request-text">达标情况：{{status}} </text>
+    <button bindtap="updateRun">提交步数</button>
+    
+    <!-- <scroll-view scroll-x class="sort-nav" scroll-with-animation enable-flex="true">
+        <view class="sort-nav-item" bindtap="showCount" wx:for="{{sortList}}" data-index="{{index}}">
+            <image class="sort-nav-icon" src="{{item.icon}}" mode="widthFix" lazy-load="false"></image>
+            <text class="sort-nav-text">{{item.text}}</text>
+            <image class="down-selected" src="../../images/dwon.png"></image>
+        </view>
+    </scroll-view> -->
+    <!-- <van-cell custom-class="any" title-class="share" title="{{day}}{{count}}" bind:click="onClick">
+        <van-icon name="share-o" slot="right-icon" class="custom-icon" />
+    </van-cell>
+    <van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onSelect" bind:close="onClose" /> -->
+    <view class="titleBox">
+        <text class="" selectable="false" space="false" decode="false">步数统计</text>
+    </view>
+    <view class="box">
+        <view class="all">
+            <view class="val">名字</view>
+            <view class="val">步数</view>
+            <view class="val">是否达标</view>
+        </view>
+        <ol>
+            <li class="rank" wx:for="{{runResult}}" wx:key="index">
+                <view class="all">
+                    <view class="val">{{item.name}}</view>
+                    <view class="val">{{item.step}}</view>
+                    <view class="val">{{item.status}}</view>
+                </view>
+            </li>
+        </ol>
+    </view>
+    <view class="div"></view>
+    <!-- <van-cell custom-class="timer" title="{{currentDate}}" title-class="timeTitle" is-link bind:click="showPopUp" />
+    <van-popup show="{{ showPop }}" close-icon="true" bind:close="showPopDown" custom-class="pop">
+        <van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" bind:cancel="exit" bind:confirm="conExit" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" />
+    </van-popup> -->
+    <!-- <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" /> -->
+    <picker mode="date" value="{{date}}" start="2021-01-01" end="2023-12-01" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view>

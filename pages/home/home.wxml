@@ -1,0 +1,46 @@
+<!-- pages/home/home.wxml -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">CampusCloud</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+    </view>
+</view>
+
+<view class="basicInfo">
+    <view class="userInfo">
+        <block wx:if="{{canIUseOpenData}}" class="userinfo-opendata">
+            <view class="userinfo-avatar">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <open-data type="userNickName"></open-data>
+        </block>
+        <block wx:elif="{{!hasUserInfo}}">
+            <button wx:if="{{canIUseGetUserProfile}}">获取头像昵称</button>
+            <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                获取头像昵称
+            </button>
+            <view wx:else>请使用1.4.4及以上版本基础库</view>
+        </block>
+    </view>
+
+    <view class="name infoStyle">
+        <text class="ntx txStyle" selectable="false" space="false" decode="false">
+            姓名:   {{name}}
+        </text>
+    </view>
+    <view class="sId infoStyle">
+        <text class="stx txStyle" selectable="false" space="false" decode="false">
+            学号:   {{id}}
+        </text>
+    </view>
+    <view class="college infoStyle">
+        <text class="ctx txStyle" selectable="false" space="false" decode="false">
+            学院:   {{college}}
+        </text>
+    </view>
+</view>
+
+<!-- <view class="btBar">
+    <tabbar data="{{tabbar}}" bindchange="tabChange"></tabbar>
+</view> -->
+  

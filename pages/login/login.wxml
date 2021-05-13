@@ -1,0 +1,19 @@
+<!-- pages/login/login.wxml -->
+<view class="main">
+    <view class="mask">
+        <view class="maskIn">
+            <image class="xk" animation="{{ani}}" src="../../images/yw.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        </view>
+    </view>
+    <view class="formCon">
+        <!-- <text class="title">{{text}}</text> -->
+        <text class="title" animation="{{ani2}}">让我们联结到你</text>
+        <form action="">
+            <input type="text" bindtap="mh" value="{{inputValue1}}" class="n" placeholder="请输入你的姓名" />
+            <input type="text" bindtap="mh" value="{{inputValue2}}" class="s" placeholder="请输入你的学号" />   
+            <input type="text" bindtap="mh" value="{{inputValue3}}" class="c" placeholder="请输入你所在学院" />
+            <button class="conf" type="primary">提交</button>
+            <button class="res" type="default" bindtap='cancel'>重置</button>
+        </form>
+    </view>
+</view>

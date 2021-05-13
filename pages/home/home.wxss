@@ -1,0 +1,73 @@
+/* pages/home/home.wxss */
+
+.nav-wrap {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  color: #000;
+}
+
+.nav-title {
+  position: absolute;
+  text-align: center;
+  max-width: 327rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 35rpx;
+  color: #2c2b2b;
+  font-weight: 400;
+}
+
+.nav-capsule {
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+  width: 50rpx;
+  justify-content: space-around;
+  /* border-radius: 50%; */
+  margin-top: 54rpx;
+  z-index: 999999999;
+}
+
+
+
+page,
+.basicInfo {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  /* background-color: red; */
+  margin-top: 300rpx;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.infoStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40rpx;
+}
+
+.txStyle {
+  border-bottom: 1px solid #ccc;
+}

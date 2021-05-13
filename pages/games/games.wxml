@@ -1,0 +1,22 @@
+<!--pages/games/games.wxml-->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">CampusCloud</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+    </view>
+</view>
+
+<view class='swiper' style="margin-top: {{navH*2+20}}px;">
+  <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" interval='{{interval}}'indicator-active-color="#007aff" bindchange="bindchange" circular="{{circular}}" style="height:{{imgheights[current]}}rpx;">
+    <block wx:for='{{gamesList}}' wx:key="{{index}}" wx:if="{{index<3}}">
+      <swiper-item>
+        <image src="{{item.pictrueUrl}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<van-cell-group wx:for="{{gamesList}}">
+  <van-cell title="{{item.name}}" value="比赛信息" label="报名截止时间：{{item.signTime}}" is-link link-type="navigateTo" url="/pages/gamePage/gamePage"/>
+</van-cell-group>
+<!-- <tabbar data="{{tabbar}}" bindchange="tabChange"></tabbar> -->

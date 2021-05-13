@@ -1,0 +1,8 @@
+<!--pages/sports/days/days.wxml-->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">CampusCloud</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+    </view>
+</view>
+<van-button type="primary">我的按钮</van-button>

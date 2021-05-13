@@ -1,0 +1,29 @@
+<!--pages/fir/fir.wxml-->
+<!-- <text>pages/fir/fir.wxml</text> -->
+<view class="firPage" animation="{{ani0}}">
+  <text style="position:relative;"></text>
+  <view class="begin">
+    <text class="title">{{text}}</text>
+    <image class="dq" src="../../images/dq.png" animation="{{ani}}" style="height: 400px; width: 400px" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <image class="hj" src="../../images/hj.png" animation="{{ani2}}" style="height: 300px; width: 300px" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <button bindtap="Slide" class="beginBtn" type="primary">开启校园生活</button>
+  </view>
+  <view class="iden">
+    <view class="chBox">
+      <button class="st" bindtap="jumpLogin">
+        <image class="i" src="../../images/xs.png" style="height: 100px; width: 100px" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <text style="width:100%;" class="" selectable="false" space="false" decode="false">
+          我是学生
+        </text>
+      </button>
+      <script></script>
+      <button class="ad" bindtap="jumpLogin2">
+        <image class="i" src="../../images/ls.png" style="height: 100px; width: 100px" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />      
+        <text style="width:100%;" class="" selectable="false" space="false" decode="false">
+          我是管理员
+        </text>
+      </button>
+    </view>
+  </view>
+
+</view>

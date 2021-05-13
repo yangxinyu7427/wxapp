@@ -1,0 +1,8 @@
+<!--miniprogram/pages/bin/bin.wxml-->
+<text>姓名：</text>
+<input planceholder="姓名" bindinput="nameInput" type="primary"></input>
+<text>班号：</text>
+<input planceholder="班号" bindinput="numberInput" type="primary"></input>
+<text>学号：</text>
+<input planceholder="学号" bindinput="stdnumberInput" type="primary"></input>
+<button bindtap="bind" >提交</button>

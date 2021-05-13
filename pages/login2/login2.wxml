@@ -1,0 +1,17 @@
+<!-- pages/login/login.wxml -->
+<view class="main">
+    <view class="mask">
+        <view class="maskIn">
+            <image class="xk" animation="{{ani}}" src="../../images/ts.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        </view>
+    </view>
+    <view class="formCon">
+        <text class="title" animation="{{mh}}">请开启Campus管理</text>
+        <form action="">
+            <input type="text" bindtap='mh' value="{{inputValue1}}" class="n" placeholder="请输入你的管理id" />  
+            <input type="text" bindtap='mh' value="{{inputValue3}}" class="s" placeholder="请输入你所在学院" />
+            <button class="conf" type="primary">提交</button>
+            <button class="res" type="default" bindtap='cancel'>重置</button>
+        </form>
+    </view>
+</view>
