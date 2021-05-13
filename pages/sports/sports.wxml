@@ -51,7 +51,8 @@
     <!-- <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" /> -->
     <picker mode="date" value="{{date}}" start="2021-01-01" end="2023-12-01" bindchange="bindDateChange">
     <view class="picker">
-      当前选择: {{showdate}}
+      当前选择:     {{showdate}}
     </view>
   </picker>
 </view>
+//hgfhfgh
