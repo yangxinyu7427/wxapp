@@ -133,7 +133,6 @@ Page({
         console.log("获取成功", res)
         that.setData({
           gamesList: res.data,
-
         })
         that.setData({
           pictureUrl: res.data

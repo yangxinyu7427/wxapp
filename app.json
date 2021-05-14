@@ -1,14 +1,33 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/beiwanglu/beiwanglu",
     "pages/checkTeam/checkTeam",
     "pages/sports/sports",
     "pages/gamesTeam/gamesTeam",
     "pages/games/games",
     "pages/annoucegame/annoucegame",
+=======
+    "pages/games/games",
+    "pages/gamesTeam/gamesTeam",
+    "pages/checkTeam/checkTeam",
+    
+    
+    
+    
+    
+    "pages/annoucegame/annoucegame",
+    
+    
+    "pages/sports/sports", 
+>>>>>>> develop
     "pages/runtest/runtest",
     "pages/bin/bin",
     "pages/comm/comm",
+<<<<<<< HEAD
+=======
+    
+>>>>>>> develop
     "pages/gamePage/gamePage",
     "pages/days/days",
     "pages/home/home",

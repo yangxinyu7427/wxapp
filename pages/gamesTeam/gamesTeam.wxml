@@ -7,7 +7,21 @@
 <view>
   <input placeholder="请输入参加的比赛" bindinput="addGamesName" ></input>
 </view>
+<<<<<<< HEAD
 <form bindsubmit="formSubmit" bindreset="formReset">
+=======
+
+
+<!-- 这个是给出比赛的题目（打算做一个选择的框）下面item.name是他的题目 -->
+<view wx:for="{{gamesList}}" wx:key>
+  <!-- 给数据一个框 -->
+  <view class="kuang">
+    <view>比赛题目：{{item.name}}</view>
+  </view>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+>>>>>>> develop
  
  
  <input type='text' value='{{userid}}' name="userid" style="display:none;"></input>

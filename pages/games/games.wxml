@@ -17,6 +17,6 @@
 </view>
 
 <van-cell-group wx:for="{{gamesList}}">
-  <van-cell title="{{item.name}}" value="比赛信息" label="报名截止时间：{{item.signTime}}" is-link link-type="navigateTo" url="/pages/gamePage/gamePage"/>
+  <van-cell title="{{item.name}}" value="比赛信息" label="报名截止时间：{{item.signTime}}" is-link link-type="navigateTo" url="/pages/gamePage/gamePage?gamename={{item.name}}"/>
 </van-cell-group>
 <!-- <tabbar data="{{tabbar}}" bindchange="tabChange"></tabbar> -->
