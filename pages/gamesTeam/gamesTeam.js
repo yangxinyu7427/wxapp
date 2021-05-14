@@ -7,10 +7,7 @@ let teamNumberEmail = [];
 let teamName = "";
 let gamesName = "";
 let signTime = "";
-<<<<<<< HEAD
-=======
 let gameMes = "";
->>>>>>> develop
 
 Page({
 
@@ -20,19 +17,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
-=======
     gamesList:[]
->>>>>>> develop
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-<<<<<<< HEAD
-
-=======
     let that = this
     wx.cloud.database().collection('gamesMes')
       .get()
@@ -49,7 +40,6 @@ Page({
       .catch(res => {
         console.log("获取失败", res)
       })
->>>>>>> develop
   },
 
   /**
