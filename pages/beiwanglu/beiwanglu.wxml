@@ -1,0 +1,8 @@
+<!--pages/beiwanglu/beiwanglu.wxml-->
+<text>pages/beiwanglu/beiwanglu.wxml</text>
+<test>{{showdate}}</test>
+<view><button bindtap="setkaoshi">考试</button></view>
+<view><button bindtap="sethuiyi">会议</button></view>
+<view><button bindtap="setqita">其他</button></view>
+<view><button bindtap="setzuoye">作业</button></view>
+<view><button bindtap="setcaiwu">财务</button></view>
