@@ -1,17 +1,24 @@
 // pages/beiwanglu/beiwanglu.js
 var util = require('../../utils/util.js');
+var text=''
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    array: ['考试', '会议', '竞赛', '作业','其他'],
     showdate:'',
     queryResult:'',
     name:'',
     number:'',
     stdnumber:'',
-    kind:''
+    kind:'',
+    openid:'',
+    index:0,
+    findkind:'考试',
+    findResult:''
   },
 
   /**
@@ -77,10 +84,97 @@ Page({
   this.setData({kind:'作业'})
   console.log(this.data.kind)
  },
- setcaiwu(){
-  this.setData({kind:'财务'})
+ setjingsai(){
+  this.setData({kind:'竞赛'})
   console.log(this.data.kind)
  },
+ Input(event){
+  text=event.detail.value 
+  console.log('接受成功: ', text)
+},
+upDate(){
+  db.collection('beiwang').where({
+    _openid: this.data.openid,
+    text:text,
+    date:this.data.showdate
+  }).get({
+    success: (res)=> {
+      console.log("查询结果",res.data.length)
+      if(res.data.length==0){
+        db.collection('beiwang').add({
+          data: {
+            
+            text:text,
+            date:this.data.showdate,
+            kind:this.data.kind
+          },
+          success: res => {
+            
+            wx.showToast({
+              title: '新增记录成功',
+            })
+            console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+          },
+          fail: err => {
+            wx.showToast({
+              icon: 'none',
+              title: '新增记录失败'
+            })
+            console.error('[数据库] [新增记录] 失败：', err)
+          }
+        })
+      }
+      else{
+        console.log('已存在')
+        wx.showToast({
+          title: '备忘录已存在',
+        })
+      }
+      console.log('[数据库] [查询记录] 成功: ', res)
+    },
+    fail: err => {
+      console.error('[数据库] [查询记录] 失败：', err)
+    }
+  })
+  
+},
+
+looktext(){
+  db.collection('beiwang').where({
+    _openid: this.data.openid,
+    kind:this.data.findkind,
+  }).get({
+    success: (res)=> {
+      this.setData({findResult:res.data})
+      console.log(res)
+    }})
+},
+bindPickerChange: function (e) {
+  console.log('picker发送选择改变，携带值为', e.detail.value)
+  this.setData({
+    index: e.detail.value,
+    findkind:this.data.array[e.detail.value]
+  })
+  console.log('picker发送选择改变，携带值为', this.data.findkind)
+},
+getdel:function(e){
+  console.log('picker发送选择改变，携带值为', e.target.id)
+  console.log('picker发送选择改变，携带值为', this.data.findResult[e.target.id]._id)
+  db.collection('beiwang').doc(this.data.findResult[e.target.id]._id).remove({
+    success: res => {
+      wx.showToast({
+        title: '删除成功',
+      })
+    },
+    fail: err => {
+      wx.showToast({
+        icon: 'none',
+        title: '删除失败',
+      })
+      console.error('[数据库] [删除记录] 失败：', err)}
+})
+},
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

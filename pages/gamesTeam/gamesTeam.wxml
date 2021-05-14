@@ -1,0 +1,61 @@
+<!--pages/gamesTeam/gamesTeam.wxml-->
+
+<view>
+  <input placeholder="请输入队伍名字" bindinput="addTeamName" ></input>
+</view>
+
+<view>
+  <input placeholder="请输入参加的比赛" bindinput="addGamesName" ></input>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+ 
+ 
+ <input type='text' value='{{userid}}' name="userid" style="display:none;"></input>
+  
+ <view class="content" wx:for="{{formitems}}" wx:key="index" style="margin:40rpx auto;">
+  
+  <view class="inputlist">
+        <view class="inlinelist">
+          <view class="desc">队员名称</view>
+          <input type="number" class="inputs"  name="TeamNum{{index}}Name" placeholder='请输入队员名称' bindinput="inputTeamNumberName" data-index="{{index}}" type="text"  ></input>
+        </view>
+        <view class="inlinelist">
+          <view class="desc">队员学号</view>
+        <input type="number" class="inputs"  name="TeamNum{{index}}Id" placeholder='请输入队员学号' bindinput="inputTeamNumberId" data-index="{{index}}" type="text"></input>
+        </view>
+      </view>
+      <view class="inputlist">
+        <view class="inlinelist">
+          <view class="desc">手机号</view>
+          <input type="number" class="inputs"  name="TeamNum{{index}}Phone" placeholder='请输入手机号' bindinput="TeamNumberPhone" data-index="{{index}}" type="text"></input>
+        </view>
+        <view class="inlinelist">
+          <view class="desc">邮箱</view>
+          <input type="number" class="inputs"  name="TeamNum{{index}}Email" placeholder='请输入邮箱' bindinput="inputTeamNumberEmail" data-index="{{index}}" type="text"></input>
+        </view>
+      </view>
+      <view class="deleteme" id="{{index}}" bindtap="delme">删除队员</view>
+    
+
+ 
+ 
+
+ 
+  
+
+  
+  
+  
+ </view>
+ 
+
+ 
+  
+
+
+ <view class="additems" bindtap="additems">增加队员</view>
+  
+ <button formType="submit" bindtap="addTeam" >确认后请点我提交</button>
+  
+ </form>
+ 

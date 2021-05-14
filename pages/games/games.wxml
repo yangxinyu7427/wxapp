@@ -6,11 +6,11 @@
     </view>
 </view>
 
-<view class='swiper' style="margin-top: {{navH*2+20}}px;">
+<view class='swiper'>
   <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" interval='{{interval}}'indicator-active-color="#007aff" bindchange="bindchange" circular="{{circular}}" style="height:{{imgheights[current]}}rpx;">
     <block wx:for='{{gamesList}}' wx:key="{{index}}" wx:if="{{index<3}}">
       <swiper-item>
-        <image src="{{item.pictrueUrl}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad" />
+        <image src="{{item.pictureUrl}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad" />
       </swiper-item>
     </block>
   </swiper>

@@ -1,0 +1,8 @@
+
+<text>赛务发布</text>
+
+<input placeholder="赛事名称" bindinput="addGameName"> </input>
+<input placeholder="赛事报名截止时间" bindinput="addGameSignTime"></input>
+<input placeholder="赛事官网地址" bindinput="addGameWebUrl"></input>
+<button bindtap="choseImg">上传赛事照片</button>
+<button bindtap="uploadgames">确认赛事</button>

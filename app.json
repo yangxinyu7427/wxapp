@@ -1,11 +1,14 @@
 {
   "pages": [
     "pages/beiwanglu/beiwanglu",
+    "pages/checkTeam/checkTeam",
     "pages/sports/sports",
+    "pages/gamesTeam/gamesTeam",
+    "pages/games/games",
+    "pages/annoucegame/annoucegame",
     "pages/runtest/runtest",
     "pages/bin/bin",
     "pages/comm/comm",
-    "pages/games/games",
     "pages/gamePage/gamePage",
     "pages/days/days",
     "pages/home/home",

@@ -5,4 +5,28 @@
 <view><button bindtap="sethuiyi">会议</button></view>
 <view><button bindtap="setqita">其他</button></view>
 <view><button bindtap="setzuoye">作业</button></view>
-<view><button bindtap="setcaiwu">财务</button></view>
+<view><button bindtap="setjingsai">竞赛</button></view>
+<text>{{kind}}</text>
+<view><input planceholder="输入备忘事项" bindinput="Input" type="primary"></input></view>
+<view><button bindtap="upDate">保存</button></view>
+
+
+
+<view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+<button bindtap="looktext">查看已有备忘录</button>
+
+<ol>
+            <li class="rank" wx:for="{{findResult}}" wx:key="index">
+                <view class="all">
+                    <view class="val">{{item.date}}</view>
+                    <view class="val">{{item.text}} </view>
+                    <button bindtap="getdel" id="{{index}}">删除</button>
+                </view>
+            </li>
+        </ol>
